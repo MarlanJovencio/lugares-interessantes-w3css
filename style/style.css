@@ -1,0 +1,251 @@
+nav {
+    background-color: #ccc;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.w3-button i {
+    margin-right: 5px;
+}
+
+.mt-navbar {
+    margin-top: 60px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+#sidebar {
+    top: 0px;
+    transition: width 1s ease-in-out;
+    width: 300px;
+    overflow-y: auto;
+}
+
+#sidebar button {
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    height: 52px !important;
+    background-color: #ccc;
+}
+
+.user-info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#userInfo {
+    bottom: 54px;
+    width: 60%;
+    margin-left: 12px;
+    margin-bottom: 3px;
+    border-radius: 6px;
+    border-color: black !important;
+    background: white;
+    min-width: 60%;
+}
+
+.user-info button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.userImg {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+}
+
+
+.lugar {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.781);
+}
+
+.lugar h2 {
+    border-bottom: 1px dashed #5c6818;
+    margin: 0;
+    font-size: 20px;
+}
+
+.lugar h2 a {
+    color: #2c11af;
+    font-weight: bold;
+}
+
+.lugar img {
+    width: 100%;
+}
+
+.lugar .mapa {
+    width: 100%;
+    height: 500px;
+}
+
+.img-description,
+.img-title {
+    background-color: rgba(204, 204, 204, 0.8);
+    padding: 10px;
+}
+
+.w3-left,
+.w3-right,
+.w3-badge {
+    cursor: pointer
+}
+
+.w3-badge {
+    height: 13px;
+    width: 13px;
+    padding: 0
+}
+
+w3-modal {
+    display: none;
+}
+
+form textarea,
+#contatoContent textarea {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer a {
+    text-decoration: none;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.w3-modal header span {
+    background-color: transparent;
+}
+
+
+.profile-img {
+    width: 100% !important;
+    max-width: max-content !important;;
+    height: auto !important;
+    max-height: max-content !important;
+}
+
+.profile-name:focus,
+.profile-name {
+    color: black !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    font-size: xx-large !important;
+    font-weight: bold !important;
+    border-radius: 0px !important;
+    outline: 0px !important;
+    box-shadow: none !important;
+}
+
+.profile-email:focus,
+.profile-email {
+    text-align: center !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    font-size: large !important;
+    font-weight: bold !important;
+    border-radius: 0px !important;
+    outline: 0px !important;
+    box-shadow: none !important;
+}
+
+.avatar-upload {
+    position: relative;
+    margin: 50px auto;
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 28px;
+    z-index: 1;
+    top: 30px;
+}
+
+.avatar-upload .avatar-preview {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 10%);
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit input + label {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 12%);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input + label:after {
+    content: \F4CB;
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.avatar-upload .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#imagePreview {
+    background-image: url(../images/quadrada.jpg);
+}
+
+#imageUploadPencil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-profile {
+    display: flex;
+    flex-direction: column;
+}
