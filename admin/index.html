@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="../style/style.css" rel="stylesheet" type="text/css"></a>
+    <script src="../scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/7487035617.js" crossorigin="anonymous"></script>
+
+    <title>Lugares Interessantes</title>
+</head>
+
+<body id="body">
+    <!-- Navbar -->
+    <header>
+        <nav id="navbar">
+            <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
+            <h3 class="w3-right w3-margin-right"><a href="#">Lugares Interessante</a></h3>
+        </nav>
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">&times;</button>
+            <div>
+                <a href="./index.html" class="w3-bar-item w3-button" onclick="w3_close()">Inicio</a>
+                <a href="./index.html#contatoContent" class="w3-bar-item w3-button" onclick="w3_close()">Contato</a>
+                <div class="w3-bar-item w3-button" onclick="w3_accordion('administracaoContent')">
+                    Administração <i class="fa fa-caret-down"></i>
+                    <div id="administracaoContent" class="w3-hide w3-white w3-card-4 w3-round w3-padding w3-margin-top">
+                        <a class="w3-bar-item w3-button" href="./anuncios/list/list.html">Gerenciar Anúncios</a>
+                        <a class="w3-bar-item w3-button" href="./contatos/list/list.html">Gerenciar Contatos</a>
+                        <hr>
+                        <a class="w3-bar-item w3-button" href="./usuarios/list/list.html">Gerenciar Usuários</a>
+                    </div>
+                </div>
+                <div class="w3-bar-item w3-button" onclick="w3_accordion('sobrenos-texto')">
+                    Sobre nós <i class="fa fa-caret-down"></i>
+                    <div id="sobrenos-texto" class="w3-hide w3-white w3-card-4 w3-round w3-padding">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, vero? Reiciendis nemo facere
+                        quod, aspernatur atque iure nisi adipisci, eveniet id ducimus sit exercitationem hic quia fugit?
+                        Dicta, nisi repellendus.
+                    </div>
+                </div>
+            </div>
+            <div class="user-info">
+                <div class="w3-dropdown-click">
+                    <button onclick="w3_dropdown('userInfo')" class="w3-button">
+                        <img src="../images/quadrada.jpg" alt="Avatar" style="width:auto; height: 100%;"
+                        class="w3-circle">
+                        <strong class="w3-margin-left">Administrador</strong>
+                    </button>
+                    <div id="userInfo" class="w3-dropdown-content w3-bar-block w3-border">
+                        <a href="./configuracoes/settings.html" class="w3-bar-item w3-button">
+                            <i class="fa-solid fa-gear"></i>
+                            Configurações</a>
+                        <a href="./usuarios/profile/profile.html" class="w3-bar-item w3-button">
+                            <i class="fa-solid fa-pencil"></i>
+                            Editar</a>
+                        <hr>
+                        <a href="../index.html" class="w3-bar-item w3-button">
+                            <i class="fa-solid fa-power-off"></i>
+                            Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar -->
+
+    <!-- Conteudo -->
+    <section id="conteudo" class="conteudo">
+        <script src="../scripts/generate-images.js"></script>
+    </section>
+    <!-- Conteudo -->
+
+    <!-- Contato -->
+    <section class="contato">
+        <div id="contatoContent" class="w3-hide w3-container">
+            <form class="w3-container">
+                <input class="w3-input" type="name" id="contatoNome" name="contatoNome" placeholder="Informe o Nome"
+                    maxlength="255" required>
+                <label for="contatoNome">Nome</label>
+
+                <input class="w3-input" type="email" id="contatoEmail" name="contatoEmail"
+                    placeholder="Informe o E-mail" maxlength="255" required>
+                <label>E-mail</label>
+
+                <textarea class="w3-input" name="contatoMensagem" id="contatoMensagem"
+                    placeholder="Informe a sua Mensagem" maxlength="255"></textarea>
+                <label>Mensagem</label>
+
+                <button type="submit" class="w3-button w3-blue w3-round-large w3-block w3-section">Enviar</button>
+            </form>
+        </div>
+        <button onclick="w3_accordion('contatoContent')" class="w3-btn w3-block w3-light-grey">
+            Entre em contato</button>
+    </section>
+    <!-- Contato -->
+
+    <!-- Footer -->
+    <footer class="w3-bar">
+        <span class="w3-bar-item">&copy; 2022 Copyright: Marlan Jovencio</span>
+        <div class="w3-bar-item">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+    <!-- Footer -->
+</body>
+
+</html>

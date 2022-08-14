@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="../../../style/style.css" rel="stylesheet" type="text/css"></a>
+    <script src="../../../scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/7487035617.js" crossorigin="anonymous"></script>
+
+    <title>Lugares Interessantes | Listagem dos Usuários</title>
+</head>
+
+<body id="body">
+    <!-- Navbar -->
+    <header>
+        <nav id="navbar">
+            <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
+            <h3 class="w3-right w3-margin-right"><a href="../../index.html">Lugares Interessante</a></h3>
+        </nav>
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">&times;</button>
+            <div>
+                <a href="../../index.html" class="w3-bar-item w3-button">Inicio</a>
+                <a href="../../index.html#contatoContent" class="w3-bar-item w3-button" onclick="w3_close()">Contato</a>
+                <div class="w3-bar-item w3-button" onclick="w3_accordion('administracaoContent')">
+                    Administração <i class="fa fa-caret-down"></i>
+                    <div id="administracaoContent" class="w3-hide w3-white w3-card-4 w3-round w3-padding w3-margin-top">
+                        <a class="w3-bar-item w3-button" href="../../anuncios/list/list.html">Gerenciar Anúncios</a>
+                        <a class="w3-bar-item w3-button" href="../../contatos/list/list.html">Gerenciar Contatos</a>
+                        <hr>
+                        <a class="w3-bar-item w3-button" href="#">Gerenciar Usuários</a>
+                    </div>
+                </div>
+                <div class="w3-bar-item w3-button" onclick="w3_accordion('sobrenos-texto')">
+                    Sobre nós <i class="fa fa-caret-down"></i>
+                    <div id="sobrenos-texto" class="w3-hide w3-white w3-card-4 w3-round w3-padding">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, vero? Reiciendis nemo facere
+                        quod, aspernatur atque iure nisi adipisci, eveniet id ducimus sit exercitationem hic quia fugit?
+                        Dicta, nisi repellendus.
+                    </div>
+                </div>
+            </div>
+            <div class="user-info">
+                <div class="w3-dropdown-click">
+                    <button onclick="w3_dropdown('userInfo')" class="w3-button">
+                        <img src="../../../images/quadrada.jpg" alt="Avatar" style="width:auto; height: 100%;"
+                        class="w3-circle">
+                        <strong class="w3-margin-left">Administrador</strong>
+                    </button>
+                    <div id="userInfo" class="w3-dropdown-content w3-bar-block w3-border">
+                        <a href="../../configuracoes/settings.html" class="w3-bar-item w3-button">
+                            <i class="fa-solid fa-gear"></i>
+                            Configurações</a>
+                        <a href="../../usuarios/profile/profile.html" class="w3-bar-item w3-button">
+                            <i class="fa-solid fa-pencil"></i>
+                            Editar</a>
+                        <hr>
+                        <a href="../../../index.html" class="w3-bar-item w3-button">
+                            <i class="fa-solid fa-power-off"></i>
+                            Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar -->
+
+    <!-- Filtros -->
+    <section class="w3-card mt-navbar">
+        <div class="w3-container">
+            <h2>Usuários - Filtros</h2>
+        </div>
+        <div class="w3-container">
+            <form action="#" id="filtroUsuarios">
+                <div class="w3-row-padding">
+                    <div class="w3-col m2 w3-margin-bottom">
+                        <label for="codig">Código</label>
+                        <input
+                            type="number"
+                            class="w3-input"
+                            id="codigo"
+                            name="codigo"
+                            placeholder="Informe o código"
+                        />
+                    </div>
+                    <div class="w3-col m8 w3-margin-bottom">
+                        <label for="nome">Nome</label>
+                        <input
+                            type="text"
+                            class="w3-input"
+                            id="nome"
+                            name="nome"
+                            placeholder="Informe o nome"
+                        />
+                    </div>
+                    <div class="w3-col m2 w3-margin-bottom">
+                        <label for="ativo">Ativo?</label>
+                        <div class="w3-bar">
+                            <button type="button" class="w3-bar-item w3-tiny w3-button w3-green">Sim</button>
+                            <button type="button" class="w3-bar-item w3-tiny w3-button w3-sand">Ambos</button>
+                            <button type="button" class="w3-bar-item w3-tiny w3-button w3-orange">Não</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="w3-container">
+            <button class="w3-button w3-round-large w3-green w3-margin" type="submit" form="filtroUsuarios">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Buscar
+            </button>
+            <button class="w3-button w3-round-large w3-orange w3-margin" type="reset" form="filtroUsuarios">
+                <i class="fa-solid fa-eraser"></i>
+                Limpar
+            </button>
+        </div>
+    </section>
+    <!-- Filtros -->
+
+    <!-- Tabela -->
+    <section class="w3-card">
+        <div class="w3-container">
+            <table class="w3-table w3-bordered w3-hoverable">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Ativo?</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td scope="row">Augusto Guilherme Cláudio Nogueira</td>
+                        <td scope="row">Sim</td>
+                        <td scope="row">
+                            <button class="w3-button w3-round-large w3-green w3-w3-button-small w3-block w3-round-large" type="button" onclick="displayModalById('modalAcoes', true)">+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td scope="row">Beatriz Allana da Silva</td>
+                        <td scope="row">Sim</td>
+                        <td scope="row">
+                            <button class="w3-button w3-round-large w3-green w3-w3-button-small w3-block w3-round-large" type="button" onclick="displayModalById('modalAcoes', true)">+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td scope="row">Sebastião Yago Sales</td>
+                        <td scope="row">Sim</td>
+                        <td scope="row">
+                            <button class="w3-button w3-round-large w3-green w3-w3-button-small w3-block w3-round-large" type="button" onclick="displayModalById('modalAcoes', true)">+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td scope="row">Iago Henry Freitas</td>
+                        <td scope="row">Sim</td>
+                        <td scope="row">
+                            <button class="w3-button w3-round-large w3-green w3-w3-button-small w3-block w3-round-large" type="button" onclick="displayModalById('modalAcoes', true)">+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td scope="row">Amanda Antônia Raquel Almada</td>
+                        <td scope="row">Sim</td>
+                        <td scope="row">
+                            <button class="w3-button w3-round-large w3-green w3-w3-button-small w3-block w3-round-large" type="button" onclick="displayModalById('modalAcoes', true)">+</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="w3-center w3-margin-top">
+                <div class="w3-bar">
+                    <a href="#" class="w3-button">&laquo;</a>
+                    <a href="#" class="w3-button">‹</a>
+                    <a href="#" class="w3-button w3-green">1</a>
+                    <a href="#" class="w3-button">2</a>
+                    <a href="#" class="w3-button">›</a>
+                    <a href="#" class="w3-button">&raquo;</a>
+                </div>
+            </div>
+        </div>
+        <div class="w3-container">
+            <a class="w3-button w3-orange w3-round-large w3-margin" type="button" href="../../index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                voltar
+            </a>
+            <a class="w3-button w3-green w3-round-large w3-margin" type="button" href="../form/form.html">
+                <i class="fa-solid fa-plus"></i>
+                Novo
+            </a>
+        </div>
+    </section>
+    <!-- Tabela -->
+
+    <!-- Modal -->
+    <div class="w3-modal" id="modalAcoes" style="display: none;">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <h3> #1 - Augusto Guilherme Cláudio Nogueira </h3>
+                <button type="button" class="w3-button w3-round-large w3-display-topright" onclick="displayModalById('modalAcoes', false)"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="w3-container w3-center">
+                <a type="button" class="w3-button w3-green w3-round-large w3-margin"
+                    href="../form/form.html">
+                    <i class="fa-solid fa-eye"></i>
+                    Visualizar
+                </a>
+                <a type="button" class="w3-button w3-blue w3-round-large w3-margin"
+                    href="../form/form.html">
+                    <i class="fa-solid fa-pencil"></i>
+                    Editar
+                </a>
+                <button type="button" class="w3-button w3-aqua w3-round-large w3-margin" onclick="displayModalById('modalAcoes', false)">
+                    <i class="fa-solid fa-envelope"></i>
+                    Recuperar Senha</button>
+                <button type="button" class="w3-button w3-red w3-round-large w3-margin" onclick="displayModalById('modalAcoes', false)">
+                    <i class="fa-solid fa-xmark"></i>
+                    Inativar</button>
+            </div>
+            <div class="w3-container w3-margin-top w3-margin-bottom">
+                <button type="button" class="w3-button w3-orange w3-margin-bottom w3-round-large" onclick="displayModalById('modalAcoes', false)">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+    <!-- Footer -->
+    <footer class="w3-bar">
+        <span class="w3-bar-item">&copy; 2022 Copyright: Marlan Jovencio</span>
+        <div class="w3-bar-item">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+    <!-- Footer -->
+</body>
+
+</html>

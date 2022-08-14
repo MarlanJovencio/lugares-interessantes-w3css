@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="./style/style.css" rel="stylesheet" type="text/css"></a>
+    <script src="./scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/7487035617.js" crossorigin="anonymous"></script>
+    <title>Lugares Interessantes</title>
+</head>
+
+<body id="body">
+    <!-- Navbar -->
+    <header>
+        <nav id="navbar">
+            <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
+            <h3 class="w3-right w3-margin-right"><a href="./index.html">Lugares Interessante</a></h3>
+        </nav>
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="sidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">&times;</button>
+            <div>
+                <a href="./index.html" class="w3-bar-item w3-button" onclick="w3_close()">Inicio</a>
+                <a href="./index.html#contatoContent" class="w3-bar-item w3-button" onclick="w3_close()">Contato</a>
+                <div class="w3-bar-item w3-button" onclick="w3_accordion('sobrenos-texto')">
+                    Sobre nós <i class="fa fa-caret-down"></i>
+                    <div id="sobrenos-texto" class="w3-hide w3-white w3-card-4 w3-round w3-padding">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, vero? Reiciendis nemo facere
+                        quod, aspernatur atque iure nisi adipisci, eveniet id ducimus sit exercitationem hic quia fugit?
+                        Dicta, nisi repellendus.
+                    </div>
+                </div>
+            </div>
+            <div class="user-info">
+                <button class="w3-button" onclick="displayModalById('modalLogin', true)">
+                    <i class="fa-solid fa-user userImg"></i>
+                    <strong>
+                        Entrar
+                    </strong>
+                </button>
+            </div>
+        </div>
+
+        <div id="modalLogin" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+                <div class="w3-center"><br>
+                    <span onclick="displayModalById('modalLogin', false)"
+                        class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+                    <img src="./images/quadrada.jpg" alt="Avatar" style="width:30%; height: auto;"
+                        class="w3-circle w3-margin-top">
+                </div>
+
+                <form class="w3-container" action="./admin/index.html">
+                    <div class="w3-section">
+                        <label><b>Login</b></label>
+                        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Informe o Login"
+                            name="usuarioLogin" required value="admin">
+                        <label><b>Password</b></label>
+                        <input class="w3-input w3-border" type="password" placeholder="Informe a Senha"
+                            name="usuarioSenha" required value="admin">
+                        <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
+                    </div>
+                </form>
+
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                    <button onclick="displayModalById('modalLogin', false)" type="button"
+                        class="w3-button w3-red">Cancel</button>
+                    <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!-- Navbar -->
+
+    <!-- Conteudo -->
+    <section id="conteudo" class="conteudo">
+        <!-- Estrutura 
+        <article class="lugar mt-navbar">
+            <h2>{{lugar[i].title}}</h2>
+            <div class="w3-content" style="max-width: 800px;">
+                <div class="w3-display-container mySlides-{{(lugar[i].index)+1}}" style="display: block;">
+                    <img src="{{lugar[i].images[j].source}}">
+                    <div class="w3-display-middle w3-large img-title">{{lugar[i].images[j].title}}</div>
+                    <div class="w3-display-bottommiddle w3-container w3-medium img-description">{{images[j].description}}</div>
+                </div>
+            </div>
+            <div class="w3-center"><span class="w3-left">❮</span><span class="w3-badge w3-border dots-1 w3-red"></span><span
+                    class="w3-badge w3-border dots-1"></span><span class="w3-right">❯</span></div>
+            <div class="w3-center w3-bar"><button class="w3-button w3-aqua w3-border w3-round-large">Mais sobre este
+                    local</button><button class="w3-button w3-aqua w3-border w3-round-large">Localização</button></div>
+            <div id="modaisLocal{{(lugar[i].index)+1}}">
+        
+                <div id="maisSobreLocal{{(lugar[i].index)+1}}" class="w3-modal">
+                    <div class="w3-modal-content">
+                        <header class="w3-container w3-teal"><span class="w3-button w3-display-topright">X</span>
+                            <h2>{{lugar[i].title}}</h2>
+                        </header>
+                        <div class="w3-container">
+                            <p>lugar[i].informations[j]</p>
+                            <p><a href="{{lugar[i].moreInformationsUrl}}">Mais informações aqui.</a></p>
+                        </div>
+                        <footer class="w3-container w3-teal w3-center w3-padding w3-button w3-block">Ok</footer>
+                    </div>
+                </div>
+                
+                <div id="modalLocalizacao{{(lugar[i].index)+1}}" class="w3-modal">
+                    <div class="w3-modal-content">
+                        <header class="w3-container w3-teal"><span class="w3-button w3-display-topright">X</span>
+                            <h2>lugar[i].title</h2>
+                        </header>
+                        <div class="w3-container"><iframe class="mapa"
+                                src="{{lugar[i].mapaSource}}"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border: 0px;"></iframe></div>
+                        <footer class="w3-container w3-teal w3-center w3-padding w3-button w3-block">Ok</footer>
+                    </div>
+                </div>
+            </div>
+        </article>
+        -->
+        <script src="./scripts/generate-images.js"></script>
+    </section>
+    <!-- Conteudo -->
+
+    <!-- Contato -->
+    <section id="contato" class="contato">
+        <div id="contatoContent" class="w3-hide w3-container">
+            <form class="w3-container">
+                <input class="w3-input" type="name" id="contatoNome" name="contatoNome" placeholder="Informe o Nome"
+                    maxlength="255" required>
+                <label for="contatoNome">Nome</label>
+
+                <input class="w3-input" type="email" id="contatoEmail" name="contatoEmail"
+                    placeholder="Informe o E-mail" maxlength="255" required>
+                <label>E-mail</label>
+
+                <textarea class="w3-input" name="contatoMensagem" id="contatoMensagem"
+                    placeholder="Informe a sua Mensagem" maxlength="255"></textarea>
+                <label>Mensagem</label>
+
+                <button type="submit" class="w3-button w3-blue w3-round-large w3-block w3-section">Enviar</button>
+            </form>
+        </div>
+        <button onclick="w3_accordion('contatoContent')" class="w3-btn w3-block w3-light-grey">
+            Entre em contato</button>
+    </section>
+    <!-- Contato -->
+
+    <!-- Footer -->
+    <footer class="w3-bar">
+        <span class="w3-bar-item">&copy; 2022 Copyright: Marlan Jovencio</span>
+        <div class="w3-bar-item">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+    <!-- Footer -->
+</body>
+
+</html>
