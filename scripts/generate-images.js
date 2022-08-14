@@ -1,4 +1,5 @@
-const src = document.location.origin + '/';
+const isAdmin = document.location.href.includes('admin');
+const src = (isAdmin ? '../' : './');
 const articles = [
     {
         title: 'Parque Estadual da Cachoeira da Fumaça',
